@@ -1,0 +1,6 @@
+
+window.getSelection()获取鼠标选中文字
+window.getSelection().focusNode.parentNode.tagName获取选中文字的外层标签
+window.getSelection().focusNode.parentNode.setAttribute("target","_blank")给选中的文字父节点添加属性
+window.getSelection().getRangeAt(0).surroundContents(document.createElement("span"))鼠标选中的文字包裹一层span
+
