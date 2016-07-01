@@ -43,3 +43,4 @@ W3C的XMLHttpRequest的规范规定，数据将总是使用UTF-8字符集传递�
         getResponseHeader()
         abort()
 
+
