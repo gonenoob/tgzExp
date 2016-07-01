@@ -1,0 +1,45 @@
+1. ajax 跨域 
+除了IE6、IE7，大部分现代浏览器已经支持了跨域资源共享（Cross-Origin Resource Sharing，简称：CORS）标准。
+有了这个标准，只需要在Response Header里加上这么一条，就可以轻松跨域了：
+   Access-Control-Allow-Origin: http://hello-world.example
+   
+2.contentType (default: 'application/x-www-form-urlencoded; charset=UTF-8')
+W3C的XMLHttpRequest的规范规定，数据将总是使用UTF-8字符集传递给服务器；指定其他字符集无法强制浏览器更改编码。
+虽然不知道后端为什么要求前端设置，但是这个项目用到了"application/json"
+当将数据发送到服务器时，使用该内容类型。默认值是"application/x-www-form-urlencoded; charset=UTF-8"，适合大多数情况。
+$.ajax发送请求时，如果contentType设置为"appliaction/json",那么发送的数据显示在request payload下面
+如果使用默认的"application/x-www-form-urlencoded; charset=UTF-8"，则显示在from data 下面.
+
+W3C的XMLHttpRequest的规范规定，数据将总是使用UTF-8字符集传递给服务器；指定其他字符集无法强制浏览器更改编码。
+
+3.var loadItem = function() {
+        if (loadingInstance && loadingInstance.state() == "pending") {
+            loadingInstance.abort();
+        }
+        loadingInstance = $.ajax({
+        }).done(function(response) {
+            if (response.success) {
+              
+            }
+        }).fail(function(response,textStatus,error) {
+             if(textStatus !== "error" || response.readyState == 0){
+               }else{
+                    alert("网络信息错误");
+               }
+        })
+    }
+    在多次发送ajax请求时，取消之前的请求，判断状态，不提示错误信息
+    jqXHR.done(function(data, textStatus, jqXHR) {});
+    jqXHR.fail(function(jqXHR, textStatus, errorThrown) {});
+    jqXHR.always(function(data|jqXHR, textStatus, jqXHR|errorThrown) { });
+    
+    jqXHR:公开下列属性和方法
+        readyState
+        status
+        statusText
+        responseXML and/or responseText 当底层的请求分别作出XML和/或文本响应
+        setRequestHeader(name, value) 从标准出发，通过替换旧的值为新的值，而不是替换的新值到旧值
+        getAllResponseHeaders()
+        getResponseHeader()
+        abort()
+
