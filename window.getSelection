@@ -1,5 +1,5 @@
 
-window.getSelection()获取鼠标选中文字
+window.getSelection().toString()获取鼠标选中文字
 
 window.getSelection().focusNode.parentNode.tagName获取选中文字的外层标签
 
