@@ -1,4 +1,5 @@
 
+文档 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Selection/modify">https://developer.mozilla.org/en-US/docs/Web/API/Selection/modify</a>
 window.getSelection().toString()获取鼠标选中文字
 
 window.getSelection().focusNode.parentNode.tagName获取选中文字的外层标签
