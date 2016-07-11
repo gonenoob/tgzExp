@@ -6,7 +6,8 @@ js的解析器对函数声明与函数表达式并不是一视同仁地对待的
 具体表现在，当使用函数声明的形式来定义函数时，可将调用语句写在函数声明之前，而后者，这样做的话会报错。
 
 函数表达式最大的问题，在于js会将此代码拆分为两行代码分别执行。
-
+http://caibaojian.com/toutiao/5446
+http://caibaojian.com/toutiao/5450
 var getName = function () { alert (4);};
 function getName() { alert (5);}
 getName();//4
