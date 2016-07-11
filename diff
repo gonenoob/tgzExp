@@ -4,3 +4,31 @@ js的解析器对函数声明与函数表达式并不是一视同仁地对待的
 而函数表达式，如同定义其它基本类型的变量一样，只在执行到某一句时也会对其进行解析，
 所以在实际中，它们还是会有差异的，
 具体表现在，当使用函数声明的形式来定义函数时，可将调用语句写在函数声明之前，而后者，这样做的话会报错。
+
+函数表达式最大的问题，在于js会将此代码拆分为两行代码分别执行。
+
+var getName = function () { alert (4);};
+function getName() { alert (5);}
+getName();//4
+示例：
+function Foo() {
+    getName = function () { alert (1); };
+    return this;
+}
+Foo.getName = function () { alert (2);};
+Foo.prototype.getName = function () { alert (3);};
+var getName = function () { alert (4);};
+function getName() { alert (5);}
+==
+function Foo() {
+    getName = function () { alert (1); };
+    return this;
+}
+var getName;//只提升变量声明
+function getName() { alert (5);}//提升函数声明，覆盖var的声明
+
+Foo.getName = function () { alert (2);};
+Foo.prototype.getName = function () { alert (3);};
+getName = function () { alert (4);};//最终的赋值再次覆盖function getName声明
+
+getName();//最终输出4
