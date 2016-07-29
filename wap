@@ -1,0 +1,26 @@
+
+ios 绑定事件冒泡到body不触发
+解决办法，先给body所以子元素绑定空事件
+//ios冒泡到body不触发bug
+$("body>*").on("click",function(){});
+
+Android，小米自带浏览器，百度浏览器，placeholder不居中
+                                     select样式无效。可以用增加div填写selected,select position:absolute;opacity: 0;
+                                     background 图片不显示，需要background-repeat:no-repeat,单独列出来
+
+
+移动端，fixed尽量不在在底部，防止软键盘被唤起时fixed内容遮盖输入框
+
+事件绑定,监听，触发，可以在全局对象上trigger事件，可带参数
+$window.on("scroll", tbtx.throttle(function() {
+    var scrollTop = $window.scrollTop();
+    var height = $window.height();
+    var totalHeight = $document.height();
+    var distanceToBottom = totalHeight - scrollTop - height;
+    tbtx.trigger("distanceToBottom", distanceToBottom);
+}, 80));
+tbtx.on("distanceToBottom",function(val){
+	if(val < 480){
+		requestData();
+	}
+})
