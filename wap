@@ -4,10 +4,10 @@ ios 绑定事件冒泡到body不触发
 //ios冒泡到body不触发bug
 $("body>*").on("click",function(){});
 
-Android，小米自带浏览器，百度浏览器，placeholder不居中
+Android，小米自带浏览器，百度浏览器，placeholder不垂直居中。解决：不使用line-height，用padding-top方式居中
                                      select样式无效。可以用增加div填写selected,select position:absolute;opacity: 0;
                                      background 图片不显示，需要background-repeat:no-repeat,单独列出来
-
+				    
 
 移动端，fixed尽量不在在底部，防止软键盘被唤起时fixed内容遮盖输入框
 
