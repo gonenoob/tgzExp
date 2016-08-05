@@ -1,0 +1,8 @@
+
+
+["1","2","3"].map(parseInt)//[1,NaN,NaN]
+
+parseInt(string, radix)
+已radix进制解析string,参数不合法解析为NaN
+
+arr.map()会传给回调函数三个参数, item index arr
