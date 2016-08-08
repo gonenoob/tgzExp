@@ -1,17 +1,17 @@
 
-ios 绑定事件冒泡到body不触发
+1.ios 绑定事件冒泡到body不触发
 解决办法，先给body所以子元素绑定空事件
 //ios冒泡到body不触发bug
 $("body>*").on("click",function(){});
 
-Android，小米自带浏览器，百度浏览器，placeholder不垂直居中。解决：不使用line-height，用padding-top方式居中
+2.Android，小米自带浏览器，百度浏览器，placeholder不垂直居中。解决：不使用line-height，用padding-top方式居中
                                      select样式无效。可以用增加div填写selected,select position:absolute;opacity: 0;
                                      background 图片不显示，需要background-repeat,background-image等属性单独列出来
 				    
 
-移动端，fixed尽量不在在底部，防止软键盘被唤起时fixed内容遮盖输入框
+3.移动端，fixed尽量不在在底部，防止软键盘被唤起时fixed内容遮盖输入框
 
-事件绑定,监听，触发，可以在全局对象上trigger事件，可带参数
+4.事件绑定,监听，触发，可以在全局对象上trigger事件，可带参数
 $window.on("scroll", tbtx.throttle(function() {
     var scrollTop = $window.scrollTop();
     var height = $window.height();
@@ -25,3 +25,16 @@ tbtx.on("distanceToBottom",function(val){
 	}
 })
 
+5.
+<link rel="stylesheet" media="all and (orientation:portrait)" href="portrait.css">    // 竖放加载
+<link rel="stylesheet" media="all and (orientation:landscape)"href="landscape.css">   // 横放加载
+
+//竖屏时使用的样式
+<style media="all and (orientation:portrait)" type="text/css">
+    #landscape { display: none; }
+</style>
+
+//横屏时使用的样式
+<style media="all and (orientation:landscape)" type="text/css">
+    #portrait { display: none; }
+</style>
