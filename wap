@@ -39,5 +39,11 @@ tbtx.on("distanceToBottom",function(val){
     #portrait { display: none; }
 </style>
 
-6.fixed元素的宽度自适应
-fixed元素内部必须嵌套一个position:absolute元素，用来装载内容，目的就是为了让内容脱离fixed文档流，屏蔽一些fixed的坑
+6.
+fixed元素的宽度自适应,(android自带浏览器下
+)fixed元素内部必须嵌套一个position:absolute元素，用来装载内容，目的就是为了让内容脱离fixed文档流，屏蔽一些fixed的坑
+
+一个placeholder自适应bug，页面中使用<input>标签并且有属性placeholder，
+在页面横屏再转回竖屏时，会导致页面无法自适应，无论是android还是ios都会中招。
+解决方法是，在<input>外层容器中加overflow:hidden
+
