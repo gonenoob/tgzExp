@@ -1,0 +1,11 @@
+
+window.open会被大多数浏览器拦截
+
+360变态的更是将$("a")[0].click()都拦截了
+
+解决方法:
+  点击element用a href="javascript:void(0);"
+  
+  hover element 时将href更换成url
+  
+  
