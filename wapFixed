@@ -1,0 +1,10 @@
+
+防止fixed定位在手机端异常
+参考手机淘宝
+用js控制body的宽高
+top-fixed
+content
+bottom-fixed
+
+正常的布局，在content设置overflow hidden
+内容滚动时transform: translate3d(0px, -2351px, 0px)
