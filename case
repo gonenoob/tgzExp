@@ -1,2 +1,10 @@
 
 firefox 下的 event.target = IE 下的 event.srcElement
+
+jQuery点击区域外消失
+$(function() {
+ $(document).click(function() { $('.box').hide();
+}) 
+$('.box').click(function(event) {
+event.stopPropagation(); //阻止冒泡
+}) 
