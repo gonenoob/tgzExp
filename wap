@@ -47,3 +47,6 @@ fixed元素的宽度自适应,(android自带浏览器下
 在页面横屏再转回竖屏时，会导致页面无法自适应，无论是android还是ios都会中招。
 解决方法是，在<input>外层容器中加overflow:hidden
 
+7.
+select(android自带等浏览器下)默认第一条默认无法选中，可以增加<option>默认值</option>设置不可见
+
