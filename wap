@@ -50,3 +50,10 @@ fixed元素的宽度自适应,(android自带浏览器下
 7.
 select(android自带等浏览器下)默认第一条默认无法选中，可以增加<option>默认值</option>设置不可见
 
+8.hammerup在ios无效
+var u = navigator.userAgent;
+if (u.indexOf('iPhone') > -1) {//苹果手机
+	document.addEventListener('touchmove', function (event) {
+		event.preventDefault();
+	}, false);
+} 
