@@ -1,0 +1,22 @@
+ localStorage 会触发一个事件,具体地说，不论其中的哪一项在另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件。
+实际上，这就意味着不论在哪个浏览器的标签页里访问了 localStorage，所有其它的标签页都能通过 window 对象监听到这个事件，就像这样：
+
+JavaScript
+
+window.addEventListener('storage', function (event) {
+  console.log(event.key, event.newValue);
+});
+1
+2
+3
+window.addEventListener('storage', function (event) {
+  console.log(event.key, event.newValue);
+});
+event 对象有几个相应的属性：
+
+属性	描述
+key	localStroage 中被影响的键
+newValue	为这个键所赋的新值
+oldValue	这个键修改前的值
+url	当前发生改变的页面 URL
+不论某个标签页在何时修改了 localStorage，都会对其余的所有标签触发事件。这就意味着我们只要为 localStorage 赋值，就能够跨浏览器标签通信了。
