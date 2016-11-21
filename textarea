@@ -1,0 +1,10 @@
+1，把textarea内容中有回车换行的转成<br/>，
+
+       var content = $("textarea").val().replace(/\n/g,"<br/>");
+
+2，显示到textarea中的时候把<br/>转为换行显示
+
+     var content =content.replace(/<br\s*\/?\s*>/ig,"\n");
+     
+3.  去标签
+content.replace(/<.*?>/ig,"");
