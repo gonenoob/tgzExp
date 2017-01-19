@@ -1,0 +1,49 @@
+	//ajax promise
+	getPromise: function(url,async){
+		var defer = $.Deferred();
+		var ret = true;
+		if(arguments.length > 1){
+			ret =  async;
+		}
+		$.ajax({
+			url: url,
+			async: ret,
+			method: "get"
+		}).done(function(response){
+			if(response.success){
+				defer.resolve(response);
+			}else{
+				defer.reject(response);
+			}
+			
+		}).fail(function(){
+			defer.reject();
+		})
+
+		return defer.promise();
+	}
+	postPromise: function(url,,data,async){
+		var defer = $.Deferred();
+		var ret = true;
+		if(arguments.length > 1){
+			ret =  async;
+		}
+		$.ajax({
+			url: url,
+			data: JSON.stringify(data),
+			contentType: "appliacation/json",
+			async: ret,
+			method: "post"
+		}).done(function(response){
+			if(response.success){
+				defer.resolve(response);
+			}else{
+				defer.reject(response);
+			}
+			
+		}).fail(function(){
+			defer.reject();
+		})
+
+		return defer.promise();
+	}
