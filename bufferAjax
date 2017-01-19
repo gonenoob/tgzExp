@@ -1,0 +1,4 @@
+
+利用sessionStirage 缓存某页面ajax请求到的数据，在页面刷新的时候减少请求数据
+
+判断是否为缓存数据的页面，不是则removeItem
