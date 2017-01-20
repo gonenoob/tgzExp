@@ -1,0 +1,2 @@
+
+float:right 在火狐浏览器解析有问题，会下沉， 暂时用position:absolute解决
